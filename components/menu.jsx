@@ -12,23 +12,25 @@ const Menu = () => {
     <div>
       <button
         onClick={toggleDrawer}
-        className="p-2 bg-blue-500 text-white fixed top-4 left-4 z-20"
+        className="p-4 bg-transparent fixed top-4 right-4 z-20 flex flex-col justify-center items-center"
       >
-        {isOpen ? 'Close' : 'Open'} Menu
+        <div className={`w-6 h-1 bg-black mb-1 transform transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+        <div className={`w-6 h-1 bg-black mb-1 transition-opacity ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+        <div className={`w-6 h-1 bg-black transform transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
       </button>
 
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform ${
+        className={`fixed shadow-lg top-0 left-0 h-full w-64 bg-white text-white transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out z-10`}
       >
         <div className="p-4">
-          <h2 className="text-2xl font-bold">Menu</h2>
-          <ul className="mt-4">
-            <li className="py-2"><a href="#" className="text-white">Home</a></li>
-            <li className="py-2"><a href="#" className="text-white">About</a></li>
-            <li className="py-2"><a href="#" className="text-white">Services</a></li>
-            <li className="py-2"><a href="#" className="text-white">Contact</a></li>
+          
+          <ul className="mt-4 divide-y divide-grey-200">
+            <li className="py-2"><a href="#" className="text-black ">Home</a></li>
+            <li className="py-2"><a href="#" className="text-black">About</a></li>
+            <li className="py-2"><a href="#" className="text-black">Services</a></li>
+            <li className="py-2"><a href="#" className="text-black">Contact</a></li>
           </ul>
         </div>
       </div>
